@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red List — La lista Roja es un aviso, no el final</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <a href="#" class="brand" aria-label="Red List — Inicio">
+          <span class="brand-logo" aria-hidden="true">
+            <svg viewBox="0 0 64 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="leafFill" x1="12" y1="8" x2="52" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#EFF6FF" />
+                  <stop offset="1" stop-color="#DBEAFE" />
+                </linearGradient>
+              </defs>
+              <circle cx="32" cy="14" r="10" fill="#F97316" />
+              <path
+                d="M32 8v4"
+                stroke="white"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+              <circle cx="32" cy="14" r="1.6" fill="white" />
+              <path
+                d="M16 28c0-6.6 7.2-12 16-12s16 5.4 16 12v22c0 7.4-7.2 14-16 14s-16-6.6-16-14V28z"
+                fill="url(#leafFill)"
+                stroke="#2563EB"
+                stroke-width="2.2"
+              />
+              <circle cx="26" cy="36" r="2" fill="#1E3A8A" />
+              <circle cx="38" cy="36" r="2" fill="#1E3A8A" />
+              <path
+                d="M26 44c2.5 3 5.5 4.5 8.5 4.5S41 47 43 44"
+                stroke="#1E3A8A"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M22 52l3 3 5-5"
+                stroke="#2563EB"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M34 52l3 3 5-5"
+                stroke="#2563EB"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Red List</span>
+            <span class="brand-tagline">La lista Roja es un aviso, no el final</span>
+          </span>
+        </a>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel panel--form card" aria-labelledby="form-title">
+          <div class="card-inner">
+            <h1 id="form-title" class="panel-title">Registrar producto</h1>
+            <p class="panel-subtitle">
+              Ingresa los detalles para añadir un nuevo artículo al catálogo
+            </p>
+
+            <form id="product-form" class="product-form" novalidate>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+              <div class="field">
+                <label for="product-name">Nombre del producto</label>
+                <input
+                  id="product-name"
+                  name="name"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Ej. Café orgánico"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="product-detail">Detalle</label>
+                <textarea
+                  id="product-detail"
+                  name="detail"
+                  rows="4"
+                  placeholder="Descripción breve del artículo"
+                ></textarea>
+              </div>
+              <div class="field">
+                <label for="product-value">Valor</label>
+                <input
+                  id="product-value"
+                  name="value"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="Ej. 12.50"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="btn-icon" aria-hidden="true">+</span>
+                Agregar Producto
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="panel panel--showcase card card--large" aria-labelledby="showcase-title">
+          <div class="card-inner card-inner--stretch">
+            <div class="showcase-head">
+              <h2 id="showcase-title" class="panel-title">Vitrina de Productos</h2>
+              <p id="article-count" class="showcase-meta">0 Artículos registrados</p>
+            </div>
+
+            <div id="empty-state" class="empty-state">
+              <div class="empty-logo" aria-hidden="true">
+                <svg viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="emptyLeaf" x1="24" y1="16" x2="96" y2="108" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#F8FAFC" />
+                      <stop offset="1" stop-color="#E0E7FF" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="60" cy="22" r="18" fill="#F97316" />
+                  <path d="M60 12v8" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+                  <circle cx="60" cy="22" r="2.5" fill="white" />
+                  <path
+                    d="M28 46c0-11 13.5-20 32-20s32 9 32 20v38c0 12.5-13.5 24-32 24S28 96.5 28 84V46z"
+                    fill="url(#emptyLeaf)"
+                    stroke="#2563EB"
+                    stroke-width="3"
+                  />
+                  <circle cx="48" cy="64" r="3.2" fill="#1E3A8A" />
+                  <circle cx="72" cy="64" r="3.2" fill="#1E3A8A" />
+                  <path
+                    d="M48 78c4 5 9 8 15 8s11-3 15-8"
+                    stroke="#1E3A8A"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M38 92l5 5 8-8"
+                    stroke="#2563EB"
+                    stroke-width="3.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M62 92l5 5 8-8"
+                    stroke="#2563EB"
+                    stroke-width="3.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <p class="empty-title">Tu catálogo está vacío</p>
+              <p class="empty-subtitle">
+                Registra tu primer producto en el panel izquierdo para verlo aparecer aquí
+                instantáneamente
+              </p>
+            </div>
+
+            <ul id="product-list" class="product-list" aria-live="polite"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script>
+      if (typeof window.REDLIST_SUPABASE === "undefined") {
+        window.REDLIST_SUPABASE = null;
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
